@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Land Developers Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>SB Land Developers Management System</h1>
+  </header>
+
+  <main>
+    <section id="add-land">
+      <h2>Add Land Detail</h2>
+      <input type="text" id="landName" placeholder="Land Name">
+      <input type="text" id="location" placeholder="Location">
+      <input type="number" id="price" placeholder="Price">
+      <button onclick="addLand()">Add Land</button>
+    </section>
+
+    <section id="land-list">
+      <h2>Available Lands</h2>
+      <ul id="landItems"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+  <button onclick="logout()">Logout</button>
+  <section id="search-box">
+    <h2>Search Lands</h2>
+    <input type="text" id="searchInput" placeholder="Search by name or location" onkeyup="searchLand()">
+  </section> 
+  function editLand(index) {
+    const land = landList[index];
+    document.getElementById("landName").value = land.name;
+    document.getElementById("location").value = land.location;
+    document.getElementById("price").value = land.price;
+  
+    editingIndex = index;
+    document.getElementById("submitBtn").innerText = "Update Land";
+  }
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<button onclick="exportToPDF()">Download Land List as PDF</button>
+<button onclick="printLandList()">Print Land List</button>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<h2>Dashboard</h2>
+
+<p>Total Lands: <span id="totalLands">0</span></p>
+<p>Total Price: $<span id="totalPrice">0</span></p>
+
+<canvas id="locationChart" width="400" height="200"></canvas>
+<canvas id="priceChart" width="400" height="200" style="margin-top:20px;"></canvas>
+<div id="loginSection">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username"><br><br>
+    <input type="password" id="password" placeholder="Password"><br><br>
+    <button onclick="login()">Login</button>
+    <p id="loginMessage" style="color:red;"></p>
+  </div>
+  
+  <div id="mainApp" style="display:none;">
+    <button onclick="logout()" style="float:right;">Logout</button>
+    <h1>Land Developers Management System</h1>
+    <!-- Keep rest of your content here -->
+  </div>
+  
